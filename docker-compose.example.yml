@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: ecommerce_postgres
+    environment:
+      POSTGRES_USER: ecommerce_user
+      POSTGRES_PASSWORD: tu_contraseña_segura
+      POSTGRES_DB: ecommerce_dropi
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ecommerce_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ecommerce_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ecommerce_backend
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USERNAME: ecommerce_user
+      DB_PASSWORD: tu_contraseña_segura
+      DB_NAME: ecommerce_dropi
+      JWT_SECRET: tu_jwt_secret_muy_largo_y_seguro_aqui
+      STRIPE_SECRET_KEY: sk_test_...
+      DROPI_API_KEY: tu_dropi_api_key_aqui
+      DROPI_API_URL: https://api.dropi.com
+      SENDGRID_API_KEY: tu_sendgrid_api_key_aqui
+      FRONTEND_URL: http://localhost:3000
+    ports:
+      - "3001:3001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - ecommerce_network
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ecommerce_frontend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:3001
+      NEXT_PUBLIC_STRIPE_KEY: pk_test_...
+      NEXTAUTH_URL: http://localhost:3000
+      NEXTAUTH_SECRET: tu_secret_muy_largo_aqui
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - ecommerce_network
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  postgres_data:
+
+networks:
+  ecommerce_network:
+    driver: bridge
