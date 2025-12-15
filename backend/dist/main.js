@@ -33,18 +33,12 @@ async function bootstrap() {
     const limiter = (0, express_rate_limit_1.default)({
         windowMs: 15 * 60 * 1000,
         max: 100,
-        message: 'Demasiadas solicitudes desde esta IP, intenta más tarde.',
-        standardHeaders: true,
-        legacyHeaders: false,
-        skip: (req) => {
-            return req.path === '/health';
-        },
+        message: 'Demasiadas solicitudes desde esta IP, intenta más tarde.'
     });
     const authLimiter = (0, express_rate_limit_1.default)({
         windowMs: 15 * 60 * 1000,
         max: 5,
-        message: 'Demasiados intentos de inicio de sesión, intenta más tarde.',
-        skipSuccessfulRequests: true,
+        message: 'Demasiados intentos de inicio de sesión, intenta más tarde.'
     });
     app.use(limiter);
     app.use('/auth/login', authLimiter);

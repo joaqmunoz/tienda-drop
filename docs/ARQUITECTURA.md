@@ -1,30 +1,30 @@
-# 🏗️ Arquitectura del Proyecto E-Commerce Dropi
+#  Arquitectura del Proyecto E-Commerce Dropi
 
 ## Diagrama General
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                         CLIENTE (Navegador)                      │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-                    ┌────────▼────────┐
-                    │   FRONTEND      │
-                    │   (Next.js)     │
-                    │   Puerto 3000   │
-                    └────────┬────────┘
-                             │
-                    ┌────────▼────────────────────┐
-                    │   API REST Backend          │
-                    │   (NestJS)                  │
-                    │   Puerto 3001               │
-                    └────────┬────────────────────┘
-                             │
-        ┌────────────────────┼────────────────────┐
-        │                    │                    │
-   ┌────▼─────┐      ┌──────▼──────┐      ┌─────▼──────┐
-   │PostgreSQL│      │   Dropi     │      │  Stripe    │
-   │Database  │      │   API       │      │  API       │
-   └──────────┘      └─────────────┘      └────────────┘
+
+                         CLIENTE (Navegador)                      
+
+                             
+                    
+                       FRONTEND      
+                       (Next.js)     
+                       Puerto 3000   
+                    
+                             
+                    
+                       API REST Backend          
+                       (NestJS)                  
+                       Puerto 3001               
+                    
+                             
+        
+                                                
+               
+   PostgreSQL         Dropi             Stripe    
+   Database           API               API       
+               
 ```
 
 ---
@@ -34,23 +34,23 @@
 ### 1. Frontend (Next.js)
 ```
 frontend/
-├── pages/              # Rutas y páginas
-│   ├── _app.tsx       # Configuración global
-│   ├── index.tsx      # Página de inicio
-│   ├── products.tsx   # Listado de productos
-│   ├── cart.tsx       # Carrito
-│   ├── login.tsx      # Login
-│   └── register.tsx   # Registro
-├── components/        # Componentes React
-│   ├── Layout.tsx     # Layout principal
-│   ├── ProductCard.tsx
-│   └── CartSummary.tsx
-├── lib/               # Utilidades
-│   ├── api.ts         # Cliente HTTP
-│   ├── useAuth.ts     # Hook de autenticación
-│   └── useCart.ts     # Hook de carrito
-├── types/             # Tipos TypeScript
-└── styles/            # Estilos CSS
+ pages/              # Rutas y páginas
+    _app.tsx       # Configuración global
+    index.tsx      # Página de inicio
+    products.tsx   # Listado de productos
+    cart.tsx       # Carrito
+    login.tsx      # Login
+    register.tsx   # Registro
+ components/        # Componentes React
+    Layout.tsx     # Layout principal
+    ProductCard.tsx
+    CartSummary.tsx
+ lib/               # Utilidades
+    api.ts         # Cliente HTTP
+    useAuth.ts     # Hook de autenticación
+    useCart.ts     # Hook de carrito
+ types/             # Tipos TypeScript
+ styles/            # Estilos CSS
 ```
 
 **Responsabilidades:**
@@ -64,38 +64,38 @@ frontend/
 ### 2. Backend (NestJS)
 ```
 backend/
-├── src/
-│   ├── main.ts                 # Punto de entrada
-│   ├── app.module.ts           # Módulo principal
-│   ├── entities/               # Modelos de BD
-│   │   ├── user.entity.ts
-│   │   ├── product.entity.ts
-│   │   ├── order.entity.ts
-│   │   ├── order-item.entity.ts
-│   │   └── provider.entity.ts
-│   ├── common/
-│   │   └── dtos/               # Data Transfer Objects
-│   │       ├── auth.dto.ts
-│   │       ├── product.dto.ts
-│   │       └── order.dto.ts
-│   └── modules/                # Módulos de negocio
-│       ├── auth/               # Autenticación
-│       │   ├── auth.service.ts
-│       │   ├── auth.controller.ts
-│       │   ├── jwt.strategy.ts
-│       │   └── auth.module.ts
-│       ├── products/           # Gestión de productos
-│       │   ├── products.service.ts
-│       │   ├── products.controller.ts
-│       │   └── products.module.ts
-│       ├── orders/             # Gestión de órdenes
-│       │   ├── orders.service.ts
-│       │   ├── orders.controller.ts
-│       │   └── orders.module.ts
-│       └── dropi/              # Integración Dropi
-│           ├── dropi.service.ts
-│           ├── dropi.controller.ts
-│           └── dropi.module.ts
+ src/
+    main.ts                 # Punto de entrada
+    app.module.ts           # Módulo principal
+    entities/               # Modelos de BD
+       user.entity.ts
+       product.entity.ts
+       order.entity.ts
+       order-item.entity.ts
+       provider.entity.ts
+    common/
+       dtos/               # Data Transfer Objects
+           auth.dto.ts
+           product.dto.ts
+           order.dto.ts
+    modules/                # Módulos de negocio
+        auth/               # Autenticación
+           auth.service.ts
+           auth.controller.ts
+           jwt.strategy.ts
+           auth.module.ts
+        products/           # Gestión de productos
+           products.service.ts
+           products.controller.ts
+           products.module.ts
+        orders/             # Gestión de órdenes
+           orders.service.ts
+           orders.controller.ts
+           orders.module.ts
+        dropi/              # Integración Dropi
+            dropi.service.ts
+            dropi.controller.ts
+            dropi.module.ts
 ```
 
 **Responsabilidades:**
@@ -295,29 +295,29 @@ Notifica si hay cambios
 ## Seguridad
 
 ```
-┌─────────────────────────────────────────┐
-│         HTTPS en Producción             │
-└─────────────────────────────────────────┘
+
+         HTTPS en Producción             
+
                     ↓
-┌─────────────────────────────────────────┐
-│    JWT Token en Headers (Bearer)        │
-└─────────────────────────────────────────┘
+
+    JWT Token en Headers (Bearer)        
+
                     ↓
-┌─────────────────────────────────────────┐
-│    Validación de DTOs en Backend        │
-└─────────────────────────────────────────┘
+
+    Validación de DTOs en Backend        
+
                     ↓
-┌─────────────────────────────────────────┐
-│    Encriptación de Contraseñas (bcrypt) │
-└─────────────────────────────────────────┘
+
+    Encriptación de Contraseñas (bcrypt) 
+
                     ↓
-┌─────────────────────────────────────────┐
-│    Variables de Entorno Seguras         │
-└─────────────────────────────────────────┘
+
+    Variables de Entorno Seguras         
+
                     ↓
-┌─────────────────────────────────────────┐
-│    Rate Limiting en API                 │
-└─────────────────────────────────────────┘
+
+    Rate Limiting en API                 
+
 ```
 
 ---
@@ -345,21 +345,21 @@ Notifica si hay cambios
 ## Despliegue
 
 ```
-┌──────────────────┐
-│   GitHub Repo    │
-└────────┬─────────┘
-         │
-    ┌────▼─────┐
-    │ CI/CD     │
-    │ (Actions) │
-    └────┬─────┘
-         │
-    ┌────┴─────────────────┐
-    │                      │
-┌───▼────┐          ┌──────▼──┐
-│ Vercel │          │ Railway  │
-│Frontend │          │ Backend  │
-└────────┘          └──────────┘
+
+   GitHub Repo    
+
+         
+    
+     CI/CD     
+     (Actions) 
+    
+         
+    
+                          
+          
+ Vercel            Railway  
+Frontend            Backend  
+          
 ```
 
 ---
@@ -367,21 +367,21 @@ Notifica si hay cambios
 ## Monitoreo
 
 ```
-┌─────────────────────────────────────────┐
-│        Logs (Console / File)            │
-└─────────────────────────────────────────┘
+
+        Logs (Console / File)            
+
                     ↓
-┌─────────────────────────────────────────┐
-│    Sentry (Error Tracking)              │
-└─────────────────────────────────────────┘
+
+    Sentry (Error Tracking)              
+
                     ↓
-┌─────────────────────────────────────────┐
-│    DataDog / New Relic (APM)            │
-└─────────────────────────────────────────┘
+
+    DataDog / New Relic (APM)            
+
                     ↓
-┌─────────────────────────────────────────┐
-│    Alertas y Notificaciones             │
-└─────────────────────────────────────────┘
+
+    Alertas y Notificaciones             
+
 ```
 
 ---

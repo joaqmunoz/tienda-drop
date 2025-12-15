@@ -1,4 +1,4 @@
-# 📦 Guía de Instalación y Configuración
+#  Guía de Instalación y Configuración
 
 ## Requisitos Previos
 
@@ -231,11 +231,11 @@ cp .env.example .env.local
 
 ## Próximos Pasos
 
-1. ✅ Instalación completada
-2. ⏭️ Crear migraciones de BD
-3. ⏭️ Implementar autenticación
-4. ⏭️ Crear módulos de API
-5. ⏭️ Desarrollar interfaz de usuario
+1.  Instalación completada
+2. ⏭ Crear migraciones de BD
+3. ⏭ Implementar autenticación
+4. ⏭ Crear módulos de API
+5. ⏭ Desarrollar interfaz de usuario
 
 ## Comandos Útiles
 

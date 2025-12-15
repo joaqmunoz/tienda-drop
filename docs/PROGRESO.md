@@ -1,6 +1,6 @@
-# 📊 Progreso del Proyecto E-Commerce Dropi
+#  Progreso del Proyecto E-Commerce Dropi
 
-## ✅ Completado
+##  Completado
 
 ### Backend
 - [x] Estructura de carpetas
@@ -100,7 +100,7 @@
 
 ---
 
-## 🚀 Próximos Pasos Inmediatos
+##  Próximos Pasos Inmediatos
 
 1. **Instalar dependencias**
    ```bash
@@ -133,7 +133,7 @@
 
 ---
 
-## 📈 Estadísticas
+##  Estadísticas
 
 | Componente | Archivos | Líneas de Código |
 |-----------|----------|-----------------|
@@ -144,20 +144,20 @@
 
 ---
 
-## 🎯 Hitos Alcanzados
+##  Hitos Alcanzados
 
-✅ **Fase 1**: Estructura y configuración base completada
-✅ **Fase 2**: Entidades de BD y módulos de autenticación
-✅ **Fase 3**: Módulos de productos, órdenes y Dropi
-✅ **Fase 4**: Componentes y páginas principales del frontend
+ **Fase 1**: Estructura y configuración base completada
+ **Fase 2**: Entidades de BD y módulos de autenticación
+ **Fase 3**: Módulos de productos, órdenes y Dropi
+ **Fase 4**: Componentes y páginas principales del frontend
 
-🔄 **Fase 5**: Integración de pagos (Stripe)
+ **Fase 5**: Integración de pagos (Stripe)
 ⏳ **Fase 6**: Panel de administración
 ⏳ **Fase 7**: Despliegue en producción
 
 ---
 
-## 📝 Notas Importantes
+##  Notas Importantes
 
 - Todas las credenciales deben guardarse en variables de entorno
 - Las migraciones de BD se crearán cuando se instalen las dependencias
@@ -166,7 +166,7 @@
 
 ---
 
-## 🔗 Enlaces Útiles
+##  Enlaces Útiles
 
 - [Documentación del Proyecto](./PUNTOS_IMPORTANTES.md)
 - [Guía de Instalación](./INSTALACION.md)

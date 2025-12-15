@@ -37,22 +37,17 @@ async function bootstrap() {
   const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutos
     max: 100, // Máximo 100 solicitudes por ventana
-    message: 'Demasiadas solicitudes desde esta IP, intenta más tarde.',
-    standardHeaders: true,
-    legacyHeaders: false,
-    skip: (req) => {
-      // No aplicar rate limit a health checks
-      return req.path === '/health';
-    },
+    message: 'Demasiadas solicitudes desde esta IP, intenta más tarde.'
   });
 
+  // Rate limiting más estricto para autenticación
   const authLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutos
     max: 5, // Máximo 5 intentos de login
-    message: 'Demasiados intentos de inicio de sesión, intenta más tarde.',
-    skipSuccessfulRequests: true,
+    message: 'Demasiados intentos de inicio de sesión, intenta más tarde.'
   });
 
+  // Aplicar middlewares de rate limiting
   app.use(limiter);
   app.use('/auth/login', authLimiter);
   app.use('/auth/register', authLimiter);

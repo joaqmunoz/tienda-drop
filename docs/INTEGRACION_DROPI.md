@@ -1,4 +1,4 @@
-# 🔗 Integración con Dropi
+#  Integración con Dropi
 
 ## Requisitos Previos
 
@@ -100,9 +100,9 @@ export class ProductsService {
         await this.saveOrUpdateProduct(product);
       }
 
-      console.log('✅ Productos sincronizados desde Dropi');
+      console.log(' Productos sincronizados desde Dropi');
     } catch (error) {
-      console.error('❌ Error sincronizando productos:', error);
+      console.error(' Error sincronizando productos:', error);
     }
   }
 

@@ -1,4 +1,4 @@
-# 🚀 Guía de Despliegue - E-Commerce Dropi
+#  Guía de Despliegue - E-Commerce Dropi
 
 ## Opciones de Despliegue
 
@@ -420,4 +420,4 @@ Si necesitas ayuda con el despliegue:
 3. Verifica las variables de entorno
 4. Contacta al soporte del servicio
 
-¡Éxito en tu despliegue! 🚀
+¡Éxito en tu despliegue! 

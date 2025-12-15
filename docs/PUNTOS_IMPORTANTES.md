@@ -1,6 +1,6 @@
-# 📌 PUNTOS IMPORTANTES - E-Commerce Dropi
+#  PUNTOS IMPORTANTES - E-Commerce Dropi
 
-## 🎯 Objetivos Principales
+##  Objetivos Principales
 1. **Crear un e-commerce automatizado** que se integre con Dropi y otros proveedores
 2. **Sincronizar productos** automáticamente desde los proveedores
 3. **Procesar ventas** de manera automatizada
@@ -8,7 +8,7 @@
 
 ---
 
-## 🏗️ ARQUITECTURA DEL PROYECTO
+##  ARQUITECTURA DEL PROYECTO
 
 ### Frontend (Next.js)
 - **Ubicación**: `frontend/`
@@ -45,7 +45,7 @@
 
 ---
 
-## 🔑 CREDENCIALES Y VARIABLES DE ENTORNO
+##  CREDENCIALES Y VARIABLES DE ENTORNO
 
 ### Necesitarás obtener:
 1. **Dropi API Key** - Para sincronizar productos
@@ -59,38 +59,38 @@
 
 ---
 
-## 📦 ESTRUCTURA DE CARPETAS
+##  ESTRUCTURA DE CARPETAS
 
 ```
 ecommerce-dropi/
-├── frontend/
-│   ├── src/
-│   │   ├── pages/          # Páginas de Next.js
-│   │   ├── components/     # Componentes React
-│   │   ├── lib/            # Utilidades y helpers
-│   │   ├── types/          # Tipos TypeScript
-│   │   └── styles/         # Estilos Tailwind
-│   ├── package.json
-│   ├── next.config.js
-│   └── tsconfig.json
-│
-├── backend/
-│   ├── src/
-│   │   ├── modules/        # Módulos NestJS
-│   │   ├── common/         # Código compartido
-│   │   ├── config/         # Configuración
-│   │   ├── entities/       # Entidades de BD
-│   │   └── main.ts         # Punto de entrada
-│   ├── package.json
-│   └── tsconfig.json
-│
-├── docs/                   # Documentación
-└── README.md
+ frontend/
+    src/
+       pages/          # Páginas de Next.js
+       components/     # Componentes React
+       lib/            # Utilidades y helpers
+       types/          # Tipos TypeScript
+       styles/         # Estilos Tailwind
+    package.json
+    next.config.js
+    tsconfig.json
+
+ backend/
+    src/
+       modules/        # Módulos NestJS
+       common/         # Código compartido
+       config/         # Configuración
+       entities/       # Entidades de BD
+       main.ts         # Punto de entrada
+    package.json
+    tsconfig.json
+
+ docs/                   # Documentación
+ README.md
 ```
 
 ---
 
-## 🚀 PRÓXIMOS PASOS (EN ORDEN)
+##  PRÓXIMOS PASOS (EN ORDEN)
 
 ### Fase 1: Configuración Base
 - [ ] Instalar dependencias del frontend: `npm install` en `frontend/`
@@ -137,7 +137,7 @@ ecommerce-dropi/
 
 ---
 
-## 🔐 SEGURIDAD - IMPORTANTE
+##  SEGURIDAD - IMPORTANTE
 
 1. **NUNCA** hardcodear credenciales en el código
 2. **SIEMPRE** usar variables de entorno
@@ -149,7 +149,7 @@ ecommerce-dropi/
 
 ---
 
-## 📊 FLUJO DE VENTA AUTOMATIZADO
+##  FLUJO DE VENTA AUTOMATIZADO
 
 ```
 1. Cliente navega productos (sincronizados de Dropi)
@@ -171,7 +171,7 @@ ecommerce-dropi/
 
 ---
 
-## 💾 COMANDOS ÚTILES
+##  COMANDOS ÚTILES
 
 ### Frontend
 ```bash
@@ -193,7 +193,7 @@ npm run migration:run # Ejecutar migraciones
 
 ---
 
-## 🎨 TECNOLOGÍAS SELECCIONADAS
+##  TECNOLOGÍAS SELECCIONADAS
 
 | Componente | Tecnología | Razón |
 |-----------|-----------|-------|
@@ -207,7 +207,7 @@ npm run migration:run # Ejecutar migraciones
 
 ---
 
-## 📞 INTEGRACIÓN DROPI
+##  INTEGRACIÓN DROPI
 
 ### Endpoints necesarios:
 - `GET /products` - Obtener productos
@@ -223,7 +223,7 @@ npm run migration:run # Ejecutar migraciones
 
 ---
 
-## 🔄 PRÓXIMA SESIÓN
+##  PRÓXIMA SESIÓN
 
 Cuando vuelvas, recuerda:
 1. Tienes la estructura base creada
@@ -232,4 +232,4 @@ Cuando vuelvas, recuerda:
 4. Crear las entidades de BD
 5. Implementar autenticación
 
-¡Guarda este archivo para referencia rápida! 📌
+¡Guarda este archivo para referencia rápida! 
